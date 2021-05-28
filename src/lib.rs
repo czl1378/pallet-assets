@@ -176,6 +176,8 @@ pub mod pallet {
 		/// The units in which we record balances.
 		type Balance: Member + Parameter + AtLeast32BitUnsigned + Default + Copy;
 
+		type BalanceOf: Convert<u64, Option<Self::Balance>>;
+
 		/// Identifier for the class of asset.
 		type AssetId: Member + Parameter + Default + Copy + HasCompact;
 
